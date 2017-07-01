@@ -10,9 +10,9 @@ The goal of this project is to write a software pipeline to implement a  softwar
 Watch the full size video [here](https://youtu.be/_RW71oyRJq8).
 
 My project includes the following files:  
-`test.ipynb` includes the codes for vehicle detection
-`README.md` includes the documentaion of this project
-`docs/` includes all the generated images
+`test.ipynb` includes the codes for vehicle detection  
+`README.md` includes the documentaion of this project  
+`docs/` includes all the generated images  
 
 ### Histogram of Oriented Gradients
 The first step of this project is to extract the HOG features in the training data and then use them to train the linear SVM. Here the sample images of the training data.
