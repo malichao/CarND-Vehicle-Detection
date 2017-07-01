@@ -117,3 +117,5 @@ The heat map approach is used to reduce the false positive. By histograming the 
 2. The second problem I have is that the detection is not continous. To fix this issue I increased the queue of the past frames.
 
 3. There are still some false positive and false negative. To improve the performance I should train the classifier with more data.
+
+4. Another problem I met was that two detection will merge together or one being occluded by other. Fine tuning the windows size and some threshold might somehow fix the problem, but a better way would be using a vehicle tracking algorithm.
