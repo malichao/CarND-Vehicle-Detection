@@ -7,6 +7,8 @@ The goal of this project is to write a software pipeline to implement a  softwar
 
 ![gif](docs/project_video_output.gif)  
 
+Watch the full size video [here]().
+
 
 ### Histogram of Oriented Gradients
 The first step of this project is to extract the HOG features in the training data and then use them to train the linear SVM. Here the sample images of the training data.
@@ -14,13 +16,14 @@ The first step of this project is to extract the HOG features in the training da
 ![png](docs/image35.png)  
 ![png](docs/image0090.png)
   
-The training on 2580 samples shows an accuracy of 0.9838.
+My initial approach was to use channel 0 in the feature extraction and it gave the accuracy of 0.9838. After suggestion I used all the channels to extract the data and indeed it improve the accuracy to 0.9913. 
 
+Another approach I adapted was to use a threshold instead of predict() function from the classifier to reduce the false positive. After trial and error I found out 1.2 is a good value.
 
 ### Sliding Window Search
 To search the cars in the image I use the sliding window method. This is to reduce the search time and only focus on the region of interest. In each window, I extract the features, scale and feed to the Linear SVM classifier to predict the occurance of the car in that window. If a car is detected it would be added to a list.
 
-The following codes show a combination of different windows.
+To improve the accuracy and reduce the search time, I used a combination of windows. These windows are chosen to cover the front and right side of the road. However, in real life one might also want to add the windows to the left. The sizes of the windows are set to be large at the bottom of the image and set to be small at the center of the image.
 
 
 ```python
@@ -44,6 +47,10 @@ show_image(window_img)
 
 
 ![png](docs/output_3_0.png)
+
+The heat map approach is used to reduce the false positive. By histograming the bounding box of the vehicle and binarizing the heat map with a threshold I successfully reduced the number of false positives. The following picture shows the comparison of detection with and without heatmap.
+
+
 
 
 
