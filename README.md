@@ -5,7 +5,7 @@
 ## Overview
 The goal of this project is to write a software pipeline to implement a  software pipeline to detect vehicles in a video.
 
-![gif](docs/project_video_output.gif)  
+![gif](docs/project_video.gif)  
 
 Watch the full size video [here](https://youtu.be/_RW71oyRJq8).
 
