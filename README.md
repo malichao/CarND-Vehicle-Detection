@@ -27,56 +27,43 @@ To improve the accuracy and reduce the search time, I used a combination of wind
 
 
 ```python
-windows1 = slide_window(images[0], x_start_stop=[700, None], y_start_stop=[400, 640], 
-                xy_window=(90, 70), xy_overlap=(0.5, 0.5))
-window_img = draw_boxes(image, windows1, color=(0, 0, 255), thick=6) 
-show_image(window_img)
-```
-
-
-![png](docs/output_2_0.png)
-
-
-
-```python
-windows2 = slide_window(images[0], x_start_stop=[900, None], y_start_stop=[400, None], 
-                xy_window=(200, 200), xy_overlap=(0.7, 0.7))
-window_img = draw_boxes(image, windows2, color=(0, 255, 0), thick=6) 
-show_image(window_img)
-```
-
-
-![png](docs/output_3_0.png)
-
-The heat map approach is used to reduce the false positive. By histograming the bounding box of the vehicle and binarizing the heat map with a threshold I successfully reduced the number of false positives. The following picture shows the comparison of detection with and without heatmap.
-
-
-
-
-
-```python
-windows3 = slide_window(images[0], x_start_stop=[550, 850], y_start_stop=[400, 480], 
-                xy_window=(30, 30), xy_overlap=(0.7, 0.7))
-window_img = draw_boxes(image, windows3, color=(255, 0, 0), thick=1) 
-show_image(window_img)
-```
-
-
-![png](docs/output_4_0.png)
-
-
-
-```python
-windows = windows1 + windows2 + windows3
-window_img = draw_boxes(image, windows1, color=(255, 0, 0), thick=2) 
-window_img = draw_boxes(window_img, windows2, color=(0, 255, 0), thick=2) 
-window_img = draw_boxes(window_img, windows3, color=(0, 0, 255), thick=2) 
-show_image(window_img)
+windows1 = slide_window(images[0], x_start_stop=[600, 1000], y_start_stop=[400, 500], 
+                xy_window=(80, 70), xy_overlap=(0.8, 0.8))
 ```
 
 
 ![png](docs/output_5_0.png)
 
+
+
+```python
+windows2 = slide_window(images[0], x_start_stop=[800, 1100], y_start_stop=[420, 600], 
+                xy_window=(120, 120), xy_overlap=(0.8, 0.8))
+```
+
+![png](docs/output_6_0.png)
+
+
+```python
+windows3 = slide_window(images[0], x_start_stop=[950, None], y_start_stop=[400, 600], 
+                xy_window=(180, 120), xy_overlap=(0.9, 0.8))
+```
+
+![png](docs/output_7_0.png)
+
+```python
+windows4 = slide_window(images[0], x_start_stop=[900, None], y_start_stop=[400, None], 
+                xy_window=(200, 250), xy_overlap=(0.8, 0.8))
+```
+
+![png](docs/output_8_0.png)
+
+
+```python
+windows = windows1 + windows2 + windows3 + windows4
+```
+
+![png](docs/output_9_0.png)
 
 
 ```python
@@ -100,27 +87,23 @@ for image in images:
 ```
 
 
-![png](docs/output_7_0.png)
+![png](docs/output_10_1.png)
 
+![png](docs/output_10_3.png)
 
+![png](docs/output_10_5.png)
 
-![png](docs/output_7_1.png)
+![png](docs/output_10_7.png)
 
+![png](docs/output_10_9.png)
 
+![png](docs/output_10_11.png)
 
-![png](docs/output_7_2.png)
+The heat map approach is used to reduce the false positive. By histograming the bounding box of the vehicle and binarizing the heat map with a threshold I successfully reduced the number of false positives. The following picture shows the comparison of detection with and without heatmap.
 
-
-
-![png](docs/output_7_3.png)
-
-
-
-![png](docs/output_7_4.png)
-
-
-
-![png](docs/output_7_5.png)
+![png](docs/output_10_5.png)  
+![png](docs/output_13_3.png)  
+![png](docs/output_10_7.png)  
 
 
 ### Discussion
