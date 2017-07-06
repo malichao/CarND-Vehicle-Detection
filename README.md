@@ -3,7 +3,7 @@
 
 ---
 ## Overview
-The goal of this project is to write a software pipeline to implement a  software pipeline to detect vehicles in a video.
+The goal of this project is to implement a software pipeline to detect vehicles in a video.
 
 ![gif](docs/project_video.gif)  
 
@@ -97,15 +97,13 @@ for image in images:
 
 ![png](docs/output_10_5.png)
 
-![png](docs/output_10_7.png)
-
 ![png](docs/output_10_9.png)
 
 ![png](docs/output_10_11.png)
 
 The heat map approach is used to reduce the false positive. By histograming the bounding box of the vehicle and binarizing the heat map with a threshold I successfully reduced the number of false positives. The following picture shows the comparison of detection with and without heatmap.
 
-![png](docs/output_10_5.png)  
+![png](docs/output_10_3.png)
 ![png](docs/output_13_3.png)  
 ![png](docs/output_10_7.png)  
 
